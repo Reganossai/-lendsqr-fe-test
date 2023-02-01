@@ -689,9 +689,12 @@
     }
 
     .zaracho{
+        display: block;
         margin-top: 35px ;
-        color: whitesmoke;
+        color: #909090;
         z-index: 99;
+        font-size: 20px;
+        font-weight: bolder;
     }
 
 
