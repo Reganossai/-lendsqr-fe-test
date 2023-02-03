@@ -902,7 +902,7 @@
     .bannerr img{
         width: 385px;
         position: absolute;
-        left: 250px;
+        left: 5px;
         top: -1100px;
         opacity: 0.2;
    }
