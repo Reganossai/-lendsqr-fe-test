@@ -1,37 +1,103 @@
-import {useState} from 'react';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faBars} from '@fortawesome/free-solid-svg-icons';
-import {faXmark} from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom';
+import React, { useCallback } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
+import image from "../assets/image.png";
 
-const Navbar = () => {
-const [nav,setNav]=useState(false);
-const handleNav = () =>{
-setNav(!nav);
-  }
 
-nav?document.body.style.overflow="hidden":document.body.style.overflow="auto"
+const Navbar = ({handleLogout}) => {
+  const [nav, setNav] = useState(false);
+  const handleNav = () => {
+    setNav(!nav);
+  };
+
   
-return(
-<nav className="navbar">
-<Link to="/"><img src="http://sekior.next-itservices.com/wp-content/uploads/2022/06/lgo.png" alt="Sekior Logo" className="sekior-logo" /></Link>
-<div id="navbarSupportedContent">
-<button ><b>Login</b></button>
-  </div>
-  {nav?
-<div id="navbarSupportedContentMobile">
-             <h1>Homepage</h1>
-             <h1>homie</h1>
-             <h1>Sample Page</h1>
-             <button ><b>Login</b></button>
-             </div>:null}
 
-<div onClick={handleNav} className="zaracho">
-{nav ? <FontAwesomeIcon icon={faXmark}/>:<FontAwesomeIcon icon={faBars}/>}
+  const Logout = useCallback(() => {
+    handleLogout()
+  },[handleLogout])
+
+  nav
+    ? (document.body.style.overflow = "hidden")
+    : (document.body.style.overflow = "auto");
+
+  return (
+  <div>
+     <nav className="navbar navbar-expand-lg">
+      <div className="logo-div">
+        <Link to="/">
+          <img src={image} className="logoo" alt="logoo" />
+        </Link>
       </div>
+      <div id="navbarSupportedContent">
+        <ul>
 
-</nav>
-);
+          <li className="nav-link">
+            <NavLink exact activeClassName="active" to="/">
+              Home
+            </NavLink>
+          </li>
+          <li className="nav-link">
+            <NavLink activeClassName="active" to="/arrivals">
+              Arrivals
+            </NavLink>
+          </li>
 
-  }
-  export default Navbar;
+          <li className="nav-link">
+            <NavLink activeClassName="active" to="/departures">
+              Departures
+            </NavLink>
+          </li>
+
+          <li className="nav-link">
+            <button className="btn btn-info" onClick={Logout}>
+              logout
+            </button>
+          </li>
+        </ul>
+      </div>
+      {nav ? (
+        <div id="navbarSupportedContentMobile">
+          <ul>
+          <li className="nav-link">
+            <Link exact ClassName="activee" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="nav-link">
+            <Link ClassName="activee" to="/arrivals">
+              Arrivals
+            </Link>
+          </li>
+
+          <li className="nav-link">
+            <Link ClassName="activee" to="/departures">
+              Departures
+            </Link>
+          </li>
+
+          <li className="nav-link">
+            <button className="btn btn-info" onClick={Logout}>
+              logout
+            </button>
+          </li>
+
+          </ul>
+        </div>
+      ) : null}
+
+      <div onClick={handleNav} className="zaracho">
+        {nav ? (
+          <FontAwesomeIcon icon={faXmark} />
+        ) : (
+          <FontAwesomeIcon icon={faBars} />
+        )}
+      </div>
+    </nav>
+  </div>
+  );
+};
+
+export default Navbar;
