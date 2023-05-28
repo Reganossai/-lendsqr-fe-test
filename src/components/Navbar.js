@@ -1,13 +1,12 @@
-import React, { useCallback, useEffect} from "react";
+import React, { useCallback} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
-import { Link, NavLink } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { useState } from "react";
 import image from "../assets/image.png";
 import Search from "./Search";
-import axios from "axios";
 
 const Navbar = ({handleLogout}) => {
   const [nav, setNav] = useState(false);
