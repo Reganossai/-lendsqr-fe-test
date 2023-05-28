@@ -1,0 +1,30 @@
+
+nav{
+    img{
+        width: 120px;
+        margin: 20px 150px 20px 10px;
+    }
+
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #navbarSupportedContent{
+    ul{
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        margin-left: 100px;
+    }
+
+    li{
+        list-style-type: none;
+        padding: 0px 10px 0px 10px;
+    }
+
+
+
+  } 

@@ -1,0 +1,33 @@
+$primary-color:	#C0C0C0;
+
+
+.searh-div {
+  input {
+    border-color: $primary-color;
+    border-width: thin;
+    padding: 8px 5px 8px 10px;
+    width: 250px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-top: 20px;
+  }
+
+  ::placeholder{
+    color: $primary-color;
+
+  }
+
+  button{
+    background-color: #40E0D0;
+    border-color: 	#40E0D0;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px; 
+    padding: 8px 15px 8px 15px;
+    color: white;
+  }
+
+  ul{
+    height: 20px;
+    overflow: hidden;
+  }
+}

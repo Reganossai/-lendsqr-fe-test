@@ -1,47 +1,52 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import image from "../assets/image.png";
-
+import Search from "./Search";
+import axios from "axios";
 
 const Navbar = ({handleLogout}) => {
   const [nav, setNav] = useState(false);
+ 
+
   const handleNav = () => {
     setNav(!nav);
   };
 
-  
-
   const Logout = useCallback(() => {
     handleLogout()
   },[handleLogout])
+
+
 
   nav
     ? (document.body.style.overflow = "hidden")
     : (document.body.style.overflow = "auto");
 
   return (
-  <div>
+  <div className="nav-usa">
      <nav className="navbar navbar-expand-lg">
       <div className="logo-div">
         <Link to="/">
           <img src={image} className="logoo" alt="logoo" />
         </Link>
       </div>
+      <Search />
       <div id="navbarSupportedContent">
         <ul>
 
           <li className="nav-link">
             <NavLink exact activeClassName="active" to="/">
-              Home
+              Docs
             </NavLink>
           </li>
           <li className="nav-link">
             <NavLink activeClassName="active" to="/arrivals">
-              Arrivals
+              <FontAwesomeIcon icon={faBell}/>
             </NavLink>
           </li>
 

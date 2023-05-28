@@ -1,0 +1,25 @@
+$primary-color:	#848884;
+
+
+* {
+    margin:0px;
+    padding: 0px;
+}
+
+nav{
+
+    #sidebarContent ul{
+        padding: 10px 10px 10px 10px;
+
+    }
+
+    #sidebarContent li{
+        list-style-type: none;
+
+    }
+
+    #sidebarContent a{
+        text-decoration: none;
+        color: $primary-color;
+    }
+}
