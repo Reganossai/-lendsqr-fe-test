@@ -11,9 +11,11 @@ const Sidebar = () => {
     setNav(!nav);
   };
 
+
+
   return (
     <div className="sidebar">
-      <nav className="navbar navbar-expand-lg">
+      <nav >
         <div id="sidebarContent">
           <ul>
             <li className="nav-link">
@@ -21,11 +23,13 @@ const Sidebar = () => {
                 Dashboard
               </NavLink>
             </li>
+            <div className="soso">
             <li className="nav-link">
               <NavLink activeClassName="active" to="/users">
                 Users
               </NavLink>
             </li>
+            </div>
             <li className="nav-link">
               <Link>Guarantors</Link>
             </li>

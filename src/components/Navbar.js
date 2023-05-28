@@ -5,9 +5,9 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import user from "../assets/user.png";
 import image from "../assets/image.png";
 import Search from "./Search";
-
 
 const Navbar = ({ handleLogout }, usernameLogin) => {
   const [profileName, setProfileName] = useState("");
@@ -51,14 +51,31 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
               </Link>
             </li>
 
-            <li className="nav-link">
-              <span>Welcome, {profileName}</span>
-            </li>
-
-            <li className="nav-link">
-              <button className="btn btn-info" onClick={Logout}>
-                logout
-              </button>
+            <li>
+              <div class="dropdown">
+                <button
+                  class="btn btn-light dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <span>
+                    <img className="p-pp" src={user} alt="user" />
+                    {profileName}
+                  </span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <ul>
+                    <li className="dropdown-item ">
+                      <button className="btn btn-primary" onClick={Logout}>
+                        logout
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
           </ul>
         </div>

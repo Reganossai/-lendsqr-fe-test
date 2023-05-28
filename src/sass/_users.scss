@@ -2,7 +2,7 @@
 .user-header{
     h1{
         position: absolute;
-        top: 120px;
+        top: 150px;
         left: 250px;
         font-family: Arial, Helvetica, sans-serif;
         color:darkblue;
@@ -11,6 +11,7 @@
 
 
 }
+
 
 .users, .active-users, .users-with-loans, .users-with-savings{
     h2{
@@ -41,27 +42,24 @@
     background-color: #FAF9F6;
     }
 
-.users-div{
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}
 
 .users{
     background-color: white;
     position: absolute;
-    top: 180px;
+    top: 250px;
     left: 250px;
     width: 240px;
+    padding: 15px 0px 15px 0px;
 }
 
 .active-users{
     
     background-color: white;
     position: absolute;
-    top: 180px;
+    top: 250px;
     left: 520px;
     width: 240px;
+    padding: 15px 0px 15px 0px;
 }
 
 
@@ -69,23 +67,43 @@
      
     background-color: white;
     position: absolute;
-    top: 180px;
+    top: 250px;
     left: 800px;
     width: 240px;
+    padding: 15px 0px 15px 0px;
 }
 
 .users-with-savings{
      
     background-color: white;
     position: absolute;
-    top: 180px;
+    top: 250px;
     left: 1090px;
     width: 240px;
+    padding: 15px 0px 15px 0px;
 }
 
 .dashboard-table{
     position: absolute;
-    top: 300px;
+    top: 380px;
+    left: 200px;
+    background-color: white;
+    overflow-x: auto;
 }
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+
+
+
 
 

@@ -7,16 +7,34 @@ nav{
 
 }
 
+.p-pp{
+    width: 20px;
+    margin-right: 15px;
+   
+}
+
+.dropdown {
+    button{
+        background-color: white;
+        color: darkblue;
+    }
+
+}
+
+
 .navbar {
     display: flex;
     flex-direction: row;
+  }
+
+  .nav-link{
+    margin-top: 25px;
   }
 
   #navbarSupportedContent{
     ul{
         display: flex;
         flex-direction: row;
-        margin-top: 20px;
         margin-left: 100px;
     }
 
