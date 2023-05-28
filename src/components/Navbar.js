@@ -40,20 +40,20 @@ const Navbar = ({handleLogout}) => {
         <ul>
 
           <li className="nav-link">
-            <NavLink exact activeClassName="active" to="/">
+            <Link >
               Docs
-            </NavLink>
+            </Link>
           </li>
           <li className="nav-link">
-            <NavLink activeClassName="active" to="/arrivals">
+            <Link>
               <FontAwesomeIcon icon={faBell}/>
-            </NavLink>
+            </Link>
           </li>
 
           <li className="nav-link">
-            <NavLink activeClassName="active" to="/departures">
+            <Link>
               Departures
-            </NavLink>
+            </Link>
           </li>
 
           <li className="nav-link">

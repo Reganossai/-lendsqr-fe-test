@@ -3,7 +3,7 @@ import Navbar  from '../components/Navbar';
 import axios from 'axios';
 import Sidebar from '../components/Sidebar';
 
-const dashboard = ({ handleLogout}) => {
+const Dashboard = ({ handleLogout}) => {
   // const [person, setPerson] = useState([]);
   // const [loading, setLoading] = useState(true);
   // const [errorMessage, setErrorMessage] = useState("");
@@ -40,10 +40,14 @@ const dashboard = ({ handleLogout}) => {
   return (
     <div>
         <Navbar  handleLogout={handleLogout}/>
-        <Sidebar/>
+       <div className='blu'>
+
+       <Sidebar/>
         
+       </div>
+       
           </div>
   )
 }
 
-export default dashboard
+export default Dashboard

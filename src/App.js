@@ -5,6 +5,7 @@ import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { useCallback, useEffect, useState } from "react";
 import { getUserToken, saveUserToken } from "./database/token";
 import './sass/App.scss';
+import Users from "./pages/Users";
 
 function App() {
   const [token, setToken] = useState("");
@@ -32,6 +33,9 @@ function App() {
           <Switch>
             <Route exact path="/">
               <Dashboard handleLogout={handleLogout} />
+            </Route>
+            <Route exact path="/users">
+              <Users  />
             </Route>
             <Route path="*">
               <Redirect to="/" />

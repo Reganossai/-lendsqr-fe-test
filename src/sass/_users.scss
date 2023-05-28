@@ -1,0 +1,28 @@
+
+.user-header{
+    h1{
+        position: absolute;
+        top: 120px;
+        left: 250px;
+        font-family: Arial, Helvetica, sans-serif;
+        color:darkblue;
+        font-weight: thin;
+    }
+}
+
+.active{
+    background-color: lightblue;
+    border-left: 5px solid cornflowerblue; 
+}
+
+.blu{
+    background-color: #E5E4E2;
+    }
+
+.users{
+    background-color: white;
+    position: absolute;
+    top: 180px;
+    left: 250px;
+
+}
