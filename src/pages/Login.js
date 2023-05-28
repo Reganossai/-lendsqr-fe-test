@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import { fetchUserByEmailAndPassword } from "../database";
+import { fetchUserByUsernameAndPassword } from "../database";
 import { Link } from "react-router-dom";
 
 const Login = ({ handleToken }) => {
-  const [emailLogin, setEmailLogin] = useState("");
+  const [usernameLogin, setUsernameLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const loggedInUser = fetchUserByEmailAndPassword(emailLogin, passwordLogin);
+    const loggedInUser = fetchUserByUsernameAndPassword(usernameLogin, passwordLogin);
     if (loggedInUser) {
       handleToken(loggedInUser.token);
     } else {
-      setLoginStatus("Wrong email or password combination");
+      setLoginStatus("Wrong username or password combination");
     }
   };
   return (
@@ -26,14 +26,14 @@ const Login = ({ handleToken }) => {
           <label for="inputUsername">Username</label>
           <input
             type="text"
-            name="emailLogin"
-            value={emailLogin}
+            name="usernameLogin"
+            value={usernameLogin}
             onChange={(e) => {
-              setEmailLogin(e.target.value);
+              setUsernameLogin(e.target.value);
             }}
             className="form-control"
-            id="inputEmail"
-            placeholder="Enter Email"
+            id="inputUsername"
+            placeholder="Enter Username"
           />
         </div>
         <div className="form-group">

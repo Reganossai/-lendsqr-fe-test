@@ -8,6 +8,28 @@
         color:darkblue;
         font-weight: thin;
     }
+
+
+}
+
+.users, .active-users, .users-with-loans, .users-with-savings{
+    h2{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        margin: 10px 0px 5px 35px;
+    }
+
+    p{
+        
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: bold;  
+        margin: 10px 0px 5px 35px;
+        color: darkblue;
+
+    }
+
 }
 
 .active{
@@ -16,15 +38,21 @@
 }
 
 .blu{
-    background-color: #E5E4E2;
+    background-color: #FAF9F6;
     }
+
+.users-div{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
 
 .users{
     background-color: white;
     position: absolute;
     top: 180px;
     left: 250px;
-    width: 200px;
+    width: 240px;
 }
 
 .active-users{
@@ -32,6 +60,32 @@
     background-color: white;
     position: absolute;
     top: 180px;
-    left: 950px;
-    width: 200px;
+    left: 520px;
+    width: 240px;
 }
+
+
+.users-with-loans{
+     
+    background-color: white;
+    position: absolute;
+    top: 180px;
+    left: 800px;
+    width: 240px;
+}
+
+.users-with-savings{
+     
+    background-color: white;
+    position: absolute;
+    top: 180px;
+    left: 1090px;
+    width: 240px;
+}
+
+.dashboard-table{
+    position: absolute;
+    top: 300px;
+}
+
+

@@ -3,13 +3,13 @@ import { saveUserOnRegister } from "../database";
 import { Link } from "react-router-dom";
 
 const Register = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [success, setSuccess] = useState(false);
 
   const handleRegister = useCallback(() => {
     const res = saveUserOnRegister({
-      email,
+      username,
       password,
      });
 
@@ -18,7 +18,7 @@ const Register = () => {
     } else {
       alert(res);
     }
-  }, [email, password]);
+  }, [username, password]);
 
   return (
     <div className="register-div">
@@ -36,15 +36,15 @@ const Register = () => {
           <form>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail">Email</label>
+                <label for="inputUsername">Username</label>
                 <input
-                  type="email"
-                  name="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="text"
+                  name="username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   class="form-control"
-                  id="inputEmail"
-                  placeholder="Email"
+                  id="inputUsername"
+                  placeholder="Username"
                 />
               </div>
               <div class="form-group col-md-6">

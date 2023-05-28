@@ -1,11 +1,13 @@
-export const fetchUserByEmailAndPassword = (email, password) => {
+import { useEffect } from "react";
+
+export const fetchUserByUsernameAndPassword = (username, password) => {
     try {
       const allUsersString = localStorage.getItem("users");
       const allUsers = JSON.parse(allUsersString);
   
       return (
         allUsers.find(
-          (user) => user.email === email && user.password === password
+          (user) => user.username === username && user.password === password
         ) || null
       );
     } catch {
@@ -18,22 +20,24 @@ export const fetchUserByEmailAndPassword = (email, password) => {
   
       const allUsersString = localStorage.getItem("users");
       const allUsers = JSON.parse(allUsersString || "[]");
-      const user = allUsers.find((u) => u.email === userDetails.email);
+      const user = allUsers.find((u) => u.username === userDetails.username);
       if (user) {
-        return "User with this email already exists";
+        return "User with this username already exists";
       }
       
   
       allUsers.push({
         ...userDetails,
-        token: Date.now(),
+        token: userDetails.username,
       });
   
       localStorage.setItem("users", JSON.stringify(allUsers));
+      
   
       return true;
     } catch(err) {
       return 'Sometheing went wrong'
     }
   };
+
   
