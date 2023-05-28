@@ -7,15 +7,17 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import image from "../assets/image.png";
 import Search from "./Search";
-import axios from "axios";
-import jwt_decode from 'jwt-decode';
+
 
 const Navbar = ({ handleLogout }, usernameLogin) => {
-  const [person, setPerson] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [profileName, setProfileName] = useState("");
   const [nav, setNav] = useState(false);
-  const [loading, setLoading] = useState(true);
-  
+
+  useEffect(() => {
+    // Retrieve the token from localStorage
+    const token = localStorage.getItem("user-token");
+    setProfileName(token);
+  }, []);
 
   const handleNav = () => {
     setNav(!nav);
@@ -24,33 +26,6 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
   const Logout = useCallback(() => {
     handleLogout();
   }, [handleLogout]);
-
-  const callBck = useCallback(async () => {
-    try {
-      setLoading(true);
-      setErrorMessage("");
-      const res = await axios.get(
-        "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
-      );
-      setPerson(res.data);
-    } catch (err) {
-      setErrorMessage(err.message);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
-
-  useEffect(() => {
-    callBck();
-  }, [callBck]);
-
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
-
-  if (errorMessage) {
-    return <h1>{errorMessage}</h1>;
-  }
 
   nav
     ? (document.body.style.overflow = "hidden")
@@ -77,7 +52,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
             </li>
 
             <li className="nav-link">
-          
+              <span>Welcome, {profileName}</span>
             </li>
 
             <li className="nav-link">
