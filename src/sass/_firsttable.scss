@@ -2,8 +2,8 @@
 
 .dashboard-table{
     position: absolute;
-    top: 380px;
-    left: 200px;
+    top: 450px;
+    left: 250px;
     background-color: white;
     overflow-x: auto;
 
@@ -70,11 +70,55 @@
 table {
     border-collapse: collapse;
     border-spacing: 0;
-    width: 100%;
-    border: 1px solid #ddd;
+    width: 1080px;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    
   }
   
   th, td {
+    font-size: 15px;
     text-align: left;
     padding: 8px;
+    border-bottom: 1px solid #E5E4E2;
+  }
+
+  .dropdown-menu{
+    height:100px;
+    width: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+
+    button{
+        background-color: white;
+        border: none;
+    }
+
+    li{
+        list-style-type: none;
+    }
+
+  }
+
+  .btt{
+    margin-left: 10px;
+
+  }
+
+  .btts{
+
+    
+    margin-left: 10px;
+  }
+
+  .bt{
+    
+    margin-left: 10px;
+
+  }
+
+  .btt, .btts, .bt {
+    button{
+        margin-left: 5px;
+    }
   }

@@ -15,7 +15,6 @@ const Dashboard = ({ handleLogout}) => {
        <Sidebar/>
         
        </div>
-       <Status/>
           </div>
   )
 }
