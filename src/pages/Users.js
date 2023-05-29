@@ -2,35 +2,13 @@ import React, { useEffect, useCallback, useState } from "react";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import Sidebar from "../components/Sidebar";
+import Firsttable from "../components/Firsttable";
 
-const Users = ({ handleLogout }) => {
+const Users = ({ handleLogout }, { itemsPerPage }) => {
   const [person, setPerson] = useState([]);
   const [total, setTotal] = useState("");
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 10;
-  const totalItems = total;
-
-  // Logic for calculating the start and end indexes of the current page
-  const lastIndex = currentPage * itemsPerPage;
-  const firstIndex = lastIndex - itemsPerPage;
-  const currentItems = person.slice(firstIndex, lastIndex);
-
-  // Render the table rows using the currentItems
-  const renderTableRows = () => {
-    return person.map((item, index) => (
-      <tr key={index}>
-        <td>{item.orgName}</td>
-        <td>{item.userName}</td>
-        <td>{item.email}</td>
-        <td>{item.phoneNumber}</td>
-        <td>{item.createdAt}</td>
-        <td>null</td>
-      </tr>
-    ));
-  };
 
   const callBck = useCallback(async () => {
     try {
@@ -90,44 +68,10 @@ const Users = ({ handleLogout }) => {
           <p>{total}</p>
         </div>
 
-        <div className="dashboard-table">
-          <table>
-            <thead>
-              <tr>
-                <th>ORGANIZATION</th>
-                <th>USERNAME</th>
-                <th>EMAIL</th>
-                <th>PHONE NUMBER</th>
-                <th>DATE JOINED</th>
-                <th>STATUS</th>
-              </tr>
-            </thead>
-            <tbody>{renderTableRows()}</tbody>
-          </table>
-
-          {/* Pagination controls */}
-          <button onClick={() => setCurrentPage(currentPage - 1)}>
-            Previous
-          </button>
-          <span>{currentPage}</span>
-          <button onClick={() => setCurrentPage(currentPage + 1)}>Next</button>
+      
         </div>
-        {/* {person.map((data) => (
-            <div key={person.id}>
-              <table>
-                <tr>
-                  <td>{person.icao24}</td>
-                  <td>{person.lastSeen}</td>
-                  <td>{person.callsign}</td>
-                  <td>{person.lastSeen}</td>
-                  <td>{person.callsign}</td>
-                  <td>{person.estDepartureAirport}</td>
-                </tr>
-              </table>
-              ))}
- */}
+ <Firsttable/>
       </div>
-    </div>
   );
 };
 

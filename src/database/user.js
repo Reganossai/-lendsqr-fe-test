@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 export const fetchUserByUsernameAndPassword = (username, password) => {
     try {
       const allUsersString = localStorage.getItem("users");

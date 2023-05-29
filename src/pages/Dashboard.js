@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar  from '../components/Navbar';
+import Status from '../components/Status';
 
 import Sidebar from '../components/Sidebar';
 
@@ -14,7 +15,7 @@ const Dashboard = ({ handleLogout}) => {
        <Sidebar/>
         
        </div>
-       
+       <Status/>
           </div>
   )
 }
