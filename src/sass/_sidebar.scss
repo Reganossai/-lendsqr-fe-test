@@ -16,17 +16,18 @@ nav{
 
     #sidebarContent li{
         list-style-type: none;
-        margin: 10px 0px 10px 0px;
+        margin: 0px 0px 10px 0px;
         width: 300px;
-
     }
 
-    #sidebarContent a{
-        text-decoration: none;
-        color: $primary-color;
-        margin-left: -15px;
-        padding: 10px 100px 10px 45px;
+
+    #sidebarContent p{
+        font-size: 13px;
+        margin: 30px 0px 0px 13px;
+        
     }
+
+    
 
 }
 
@@ -34,3 +35,65 @@ nav{
     width: 190px;
     background-color: white;
 }
+
+.fontawesome-angle-down{
+    position: absolute;
+    top: 133px;
+    left: 175px;
+    font-size: 10px;
+}
+
+
+.fontawesome-suitcase{
+    position: absolute;
+    top: 133px;
+    left: 15px;
+    font-size: 10px;
+}
+
+.fontawesome-house{
+    position: absolute;
+    top: 175px;
+    left: 15px;
+    font-size: 10px;
+
+}
+
+.fontawesome-list{
+    margin-right: 0px;
+}
+
+.sub li{
+    display: flex;
+    width: fit-content;
+
+    a{
+        text-decoration: none;
+        margin-left: -15px;
+        padding: 10px 100px 10px 45px;
+        color: darkblue;
+    }
+}
+
+.cont li{
+     a{
+        text-decoration: none;
+        margin-left: -40px;
+        padding: 10px 100px 10px 45px;
+        
+        color: $primary-color;
+        
+
+    }
+}
+
+.co li {
+        a{
+           text-decoration: none;
+           margin-left: -10px;
+           padding: 10px 100px 10px 45px;   
+           color: $primary-color;
+           
+   
+       }
+   }
