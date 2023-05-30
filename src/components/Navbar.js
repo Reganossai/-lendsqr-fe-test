@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
@@ -62,14 +63,14 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                   aria-expanded="false"
                 >
                   <span>
-                    <img className="p-pp" src={user} alt="user" />
+                    <FontAwesomeIcon icon={faUser} className="p-pp"/>
                     {profileName}
                   </span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <ul>
                     <li className="dropdown-item ">
-                      <button className="btn btn-primary" onClick={Logout}>
+                      <button id="bt" className="btn btn-primary" onClick={Logout}>
                         logout
                       </button>
                     </li>

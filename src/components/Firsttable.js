@@ -109,6 +109,7 @@ const Firsttable = () => {
             <th>PHONE NUMBER</th>
             <th>DATE JOINED</th>
             <th>STATUS</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -118,9 +119,9 @@ const Firsttable = () => {
               <td>{user.userName}</td>
               <td>{user.email}</td>
               <td>{user.phoneNumber}</td>
-              <td>{user.createdAt}</td>
+              <td>{user.createdAt}</td> 
+              <td>{statusText}</td>
               <td>
-                <span>{statusText} </span>
                 <button
                   class="btn btn-light"
                   type="button"

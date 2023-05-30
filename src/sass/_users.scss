@@ -16,7 +16,7 @@
 .users, .active-users, .users-with-loans, .users-with-savings{
     h2{
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 600;
         margin: 10px 0px 5px 35px;
     }
@@ -24,7 +24,7 @@
     p{
         
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 20px;
+        font-size: 25px;
         font-weight: bolder;  
         margin: 10px 0px 5px 35px;
         color: darkblue;
@@ -35,7 +35,7 @@
 
 .active{
     background-color: lightblue;
-    border-left: 5px solid cornflowerblue; 
+    border-left: 10px solid cornflowerblue; 
 }
 
 .blu{
@@ -47,7 +47,7 @@
     background-color: white;
     position: absolute;
     top: 250px;
-    left: 250px;
+    left: 238px;
     width: 240px;
     padding: 15px 0px 15px 0px;
 }
@@ -57,7 +57,7 @@
     background-color: white;
     position: absolute;
     top: 250px;
-    left: 520px;
+    left: 510px;
     width: 240px;
     padding: 15px 0px 15px 0px;
 }
@@ -68,7 +68,7 @@
     background-color: white;
     position: absolute;
     top: 250px;
-    left: 800px;
+    left: 780px;
     width: 240px;
     padding: 15px 0px 15px 0px;
 }
@@ -78,7 +78,7 @@
     background-color: white;
     position: absolute;
     top: 250px;
-    left: 1090px;
+    left: 1050px;
     width: 240px;
     padding: 15px 0px 15px 0px;
 }

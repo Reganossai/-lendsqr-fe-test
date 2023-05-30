@@ -2,7 +2,7 @@
 nav{
     img{
         width: 120px;
-        margin: 20px 150px 20px 10px;
+        margin: 20px 150px 20px 0px;
     }
 
 }
@@ -10,6 +10,7 @@ nav{
 .p-pp{
     width: 20px;
     margin-right: 15px;
+    color:crimson;
    
 }
 
@@ -28,14 +29,14 @@ nav{
   }
 
   .nav-link{
-    margin-top: 25px;
+    margin-top: 8px;
   }
 
   #navbarSupportedContent{
     ul{
         display: flex;
         flex-direction: row;
-        margin-left: 100px;
+        margin-left: 350px;
     }
 
     li{
@@ -43,6 +44,18 @@ nav{
         padding: 0px 10px 0px 10px;
     }
 
+    a{
+        color: darkblue;
+    }
+
 
 
   } 
+
+
+  #bt{
+    position: absolute;
+    left: 50px;
+    background-color: aquamarine;
+    color:darkblue;
+  }
