@@ -6,6 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import { getUserToken, saveUserToken } from "./database/token";
 import './sass/App.scss';
 import Users from "./pages/Users";
+import Userdetails from "./pages/Userdetails";
 
 function App() {
   const [token, setToken] = useState("");
@@ -35,7 +36,10 @@ function App() {
               <Dashboard handleLogout={handleLogout} />
             </Route>
             <Route exact path="/users">
-              <Users  />
+              <Users handleLogout={handleLogout} />
+            </Route>
+            <Route path="/userdetails">
+              <Userdetails handleLogout={handleLogout}/>
             </Route>
             <Route path="*">
               <Redirect to="/" />

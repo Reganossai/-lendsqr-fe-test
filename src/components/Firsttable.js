@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useEffect } from "react";
+import {Link} from 'react-router-dom';
 import ReactPaginate from "react-paginate";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -137,8 +138,14 @@ const Firsttable = () => {
                   <ul>
                     <li className="btt">
                       <FontAwesomeIcon icon={faEye} />
-                      <button onClick={() => handleViewDetails(user.id)}>
-                        View Details
+                      <button >
+                      <button onClick={() => handleBlacklistUser(user.id)}>
+                      <Link to="/userdetails">
+                      View Details
+                      
+                      </Link>
+                      </button> 
+                       
                       </button>
                     </li>
                     <li className="btts">

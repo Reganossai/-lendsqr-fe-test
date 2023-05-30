@@ -1,12 +1,9 @@
 import React, { useCallback, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faXmark } from "@fortawesome/free-solid-svg-icons";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import user from "../assets/user.png";
 import image from "../assets/image.png";
 import Search from "./Search";
 
@@ -76,46 +73,11 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                     </li>
                   </ul>
                 </div>
-              </div>
+              </div> 
             </li>
           </ul>
         </div>
-        {nav ? (
-          <div id="navbarSupportedContentMobile">
-            <ul>
-              <li className="nav-link">
-                <Link exact ClassName="activee" to="/">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-link">
-                <Link ClassName="activee" to="/arrivals">
-                  Arrivals
-                </Link>
-              </li>
-
-              <li className="nav-link">
-                <Link ClassName="activee" to="/departures">
-                  Departures
-                </Link>
-              </li>
-
-              <li className="nav-link">
-                <button className="btn btn-info" onClick={Logout}>
-                  logout
-                </button>
-              </li>
-            </ul>
-          </div>
-        ) : null}
-
-        <div onClick={handleNav} className="zaracho">
-          {nav ? (
-            <FontAwesomeIcon icon={faXmark} />
-          ) : (
-            <FontAwesomeIcon icon={faBars} />
-          )}
-        </div>
+       
       </nav>
     </div>
   );
