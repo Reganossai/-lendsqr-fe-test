@@ -38,7 +38,7 @@ function App() {
             <Route exact path="/users">
               <Users handleLogout={handleLogout} />
             </Route>
-            <Route path="/userdetails">
+            <Route exact path="/userdetails/:id">
               <Userdetails handleLogout={handleLogout}/>
             </Route>
             <Route path="*">

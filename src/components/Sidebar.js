@@ -13,7 +13,7 @@ const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <nav>
+      <nav className="sidebar-nav">
         <div id="sidebarContent">
           <div className="sub">
             <li>

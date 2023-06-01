@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, useMemo } from "react";
 import {Link} from 'react-router-dom';
 import ReactPaginate from "react-paginate";
 import axios from "axios";
@@ -12,7 +12,6 @@ import { faUserCheck } from "@fortawesome/free-solid-svg-icons";
 const Firsttable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(10);
-  const [person, setPerson] = useState([]);
   const [users, setUsers] = useState([]);
   const [initialUsers, setInitialUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -22,29 +21,27 @@ const Firsttable = () => {
   /*Logic for pagination*/
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = person.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = useMemo(()=>users.slice(indexOfFirstItem, indexOfLastItem),[users, indexOfFirstItem, indexOfLastItem]);
 
   const handlePageChange = ({ selected }) => {
     setCurrentPage(selected + 1);
   };
 
-  const handleActivateUser = (userId, user) => {
+  const handleActivateUser = (userId) => {
     setUsers((prevUsers) =>
       prevUsers.map((user) =>
-        user.id === userId ? { ...user, isActive: true } : user
+        user.id === userId ? { ...user, isActive: true, isBlacklisted:false } : user
       )
     );
-    setStatusText("Active");
   };
 
   const handleBlacklistUser = (userId) => {
     setUsers((prevUsers) =>
       prevUsers.map((user) =>
-        user.id === userId ? { ...user, isBlacklisted: true } : user
+        user.id === userId ? { ...user, isBlacklisted: true , isActive:false} : user
       )
     );
 
-    setStatusText("Blacklisted");
   };
 
   const handleViewDetails = (userId) => {
@@ -76,10 +73,8 @@ const Firsttable = () => {
       const res = await axios.get(
         "https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users"
       );
-      setPerson(res.data);
-      const newData = [...res.data];
-      setUsers(newData);
-      setInitialUsers(newData);
+      setUsers(res.data);
+      setInitialUsers(res.data);
     } catch (err) {
       setErrorMessage(err.message);
     } finally {
@@ -121,7 +116,7 @@ const Firsttable = () => {
               <td>{user.email}</td>
               <td>{user.phoneNumber}</td>
               <td>{user.createdAt}</td> 
-              <td>{statusText}</td>
+              <td>{user.isActive?'Active': user.isBlacklisted?"Blacklisted":'Pending'} </td>
               <td>
                 <button
                   class="btn btn-light"
@@ -140,7 +135,7 @@ const Firsttable = () => {
                       <FontAwesomeIcon icon={faEye} />
                       <button >
                       <button onClick={() => handleBlacklistUser(user.id)}>
-                      <Link to="/userdetails">
+                      <Link to={`/userdetails/${user.id}`}>
                       View Details
                       
                       </Link>
@@ -168,7 +163,7 @@ const Firsttable = () => {
         </tbody>
       </table>
       <ReactPaginate
-        pageCount={Math.ceil(person.length / itemsPerPage)}
+        pageCount={Math.ceil(users.length / itemsPerPage)}
         onPageChange={handlePageChange}
         containerClassName="pagination"
         activeClassName={"item active "}
