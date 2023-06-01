@@ -1,0 +1,66 @@
+.bgg {
+  display: flex;
+}
+
+.bgg-1 {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 130px 0px 100px;
+}
+
+.zino {
+  width: 200px;
+}
+
+.bella {
+  width: 500px;
+  margin-top: 150px;
+}
+
+.form-group {
+  position: relative;
+
+  input{
+    width: 430px;
+    padding:10px;
+
+  }
+}
+
+
+::placeholder{
+    font-size: 13px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 30px;
+  right: 200px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-image: url("../assets/user.png"); /* Replace with your icon */
+  width: 24px;
+  height: 24px;
+  background-size: cover;
+}
+
+.password-toggle.show {
+  background-image: url("../assets/user.png"); /* Replace with your icon */
+}
+
+.bgg-2 {
+    padding: 30px;
+}
+
+.bgg-2 {
+  h1 {
+    margin: 150px 0px 20px 0px;
+    color: darkblue;
+    font-weight: bold;
+  }
+
+  p {
+    color:#848884;
+    margin-bottom: 40px;
+  }
+}

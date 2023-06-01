@@ -20,9 +20,14 @@ const Userdetails = ({ handleLogout }) => {
   const params = useParams();
   const [users, setUsers] = useState([]);
 
+  //retrieving user details and storing on local storage
+  const arrayString = JSON.stringify(person);
+  localStorage.setItem("person", arrayString);
 
-  
+  const retrievedArrayString = localStorage.getItem("person");
+  const retrievedArray = JSON.parse(retrievedArrayString);
 
+  //activate user logic
   const handleActivateUser = (userId, user) => {
     setUsers((prevUsers) =>
       prevUsers.map((user) =>
@@ -32,6 +37,7 @@ const Userdetails = ({ handleLogout }) => {
     setStatusText("Active");
   };
 
+  //blacklist user logic
   const handleBlacklistUser = (userId) => {
     setUsers((prevUsers) =>
       prevUsers.map((user) =>
@@ -42,15 +48,16 @@ const Userdetails = ({ handleLogout }) => {
     setStatusText("Blacklisted");
   };
 
+  //fetching the user details
+  // Simulating an API call to fetch user details
   const fetchUserDetails = useCallback(() => {
-    // Simulating an API call to fetch user details
     const user = users.find((user) => user.id === params.id);
     return user;
   }, [users, params]);
 
+  // Fetch user details logic here
   const handleViewDetails = useCallback(() => {
-    // Fetch user details logic here
-    const userDetails = fetchUserDetails(); // Function to fetch user details
+    const userDetails = fetchUserDetails();
     if (userDetails) {
       setPerson(userDetails);
     }
@@ -69,6 +76,8 @@ const Userdetails = ({ handleLogout }) => {
     });
     setUsers(updatedUsers);
   };
+
+  //function to fetch the users from an api
   const callBck = useCallback(async () => {
     try {
       setLoading(true);
@@ -96,6 +105,7 @@ const Userdetails = ({ handleLogout }) => {
   if (errorMessage) {
     return <h1>{errorMessage}</h1>;
   }
+
   return (
     <div>
       <Navbar handleLogout={handleLogout} />
@@ -109,18 +119,24 @@ const Userdetails = ({ handleLogout }) => {
             <span>
               <FontAwesomeIcon icon={faArrowLeftLong} className="obt" />
             </span>
-            <Link to={"/users"}>
-            Back to Users
-            </Link>
+            <Link to={"/users"}>Back to Users</Link>
           </p>
         </div>
 
         <div className="user-headerr">
           <h1>User Details</h1>
-          <button id="red" className="btn btn-default" onClick={() => handleBlacklistUser()}>
+          <button
+            id="red"
+            className="btn btn-default"
+            onClick={() => handleBlacklistUser()}
+          >
             BLACKLIST USER
           </button>
-          <button id="green" className="btn btn-default" onClick={() => handleActivateUser()}>
+          <button
+            id="green"
+            className="btn btn-default"
+            onClick={() => handleActivateUser()}
+          >
             ACTIVE USER
           </button>
         </div>
@@ -157,7 +173,7 @@ const Userdetails = ({ handleLogout }) => {
           <nav className="m-d-navbar">
             <ul>
               <li className="m-d-one">General Details</li>
-              
+
               <li>Documents</li>
 
               <li>Bank Details</li>
@@ -293,7 +309,7 @@ const Userdetails = ({ handleLogout }) => {
               </div>
 
               <div>
-                <div className="m-p-total-sub"> 
+                <div className="m-p-total-sub">
                   <h4>LOAN REPAYMENT</h4>
                   <h3>{person?.education?.loanRepayment}</h3>
                 </div>
@@ -335,7 +351,10 @@ const Userdetails = ({ handleLogout }) => {
               <div>
                 <div className="m-p-total-sub">
                   <h4>FULL NAME</h4>
-                  <h3> {person?.guarantor?.firstName} {person?.guarantor?.lastName}</h3>
+                  <h3>
+                    {" "}
+                    {person?.guarantor?.firstName} {person?.guarantor?.lastName}
+                  </h3>
                 </div>
               </div>
 
@@ -361,14 +380,17 @@ const Userdetails = ({ handleLogout }) => {
               </div>
             </div>
           </div>
-          <hr/>
+          <hr />
           <div>
             <h1>Education and Employment</h1>
             <div className="m-p-total">
-            <div>
+              <div>
                 <div className="m-p-total-sub">
                   <h4>FULL NAME</h4>
-                  <h3> {person?.guarantor?.firstName} {person?.guarantor?.lastName}</h3>
+                  <h3>
+                    {" "}
+                    {person?.guarantor?.firstName} {person?.guarantor?.lastName}
+                  </h3>
                 </div>
               </div>
 

@@ -1,13 +1,24 @@
 import React, { useState } from "react";
 import { fetchUserByUsernameAndPassword } from "../database";
 import { Link } from "react-router-dom";
+import Big from '../assets/big.jpeg';
+import Small from '../assets/image.png';
 
 const Login = ({ handleToken }) => {
   const [usernameLogin, setUsernameLogin] = useState("");
   const [passwordLogin, setPasswordLogin] = useState("");
   const [loginStatus, setLoginStatus] = useState("");
 
+  const [showPassword, setShowPassword] = useState(false);
+
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+  
+
   const handleLogin = (e) => {
+    
     e.preventDefault();
     const loggedInUser = fetchUserByUsernameAndPassword(usernameLogin, passwordLogin);
     if (loggedInUser) {
@@ -20,10 +31,16 @@ const Login = ({ handleToken }) => {
     <div className="login-div">
       <div class="bg"></div>
       <div className="bgg">
-        <h1>Login</h1>
+        <div className="bgg-1">
+          <img src={Small} alt="lag" className="zino"/>
+          
+          <img src={Big} alt="lag" className="bella"/>
+        </div>
+        <div className="bgg-2">
+        <h1>Welcome!</h1>
+        <p>Enter details to login.</p>
       <form>
         <div className="form-group">
-          <label for="inputUsername">Username</label>
           <input
             type="text"
             name="usernameLogin"
@@ -35,11 +52,12 @@ const Login = ({ handleToken }) => {
             id="inputUsername"
             placeholder="Enter Username"
           />
+          
         </div>
         <div className="form-group">
-          <label for="inputPassword">Password</label>
           <input
-            type="password"
+            
+            type={showPassword ? 'text' : 'password'}
             className="form-control"
             name="passwordLogin"
             value={passwordLogin}
@@ -48,10 +66,12 @@ const Login = ({ handleToken }) => {
             }}
             id="inputPassword"
             placeholder="Password"
+            
           />
-          <small id="passwordHelp" className="passwordHelp">
-            We'll never share your password with anyone else.
-          </small>
+            <span
+        className={`password-toggle ${showPassword ? 'show' : ''}`}
+        onClick={togglePasswordVisibility}
+      ></span>
         </div>
 
         <h1 className="guk">{loginStatus}</h1>
@@ -69,6 +89,7 @@ const Login = ({ handleToken }) => {
           <Link to="/register">Don't have an account yet? Sign up here</Link>
         </div>
       </form>
+      </div>
       </div>
     </div>
   );
