@@ -2,6 +2,11 @@ import React, { useCallback, useState } from "react";
 import { saveUserOnRegister } from "../database";
 import { Link } from "react-router-dom";
 
+import Big from '../assets/big.jpeg';
+import Small from '../assets/image.png';
+
+
+
 const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -24,7 +29,15 @@ const Register = () => {
     <div className="register-div">
       <div class="bg"></div>
       <div className="bgg">
+      <div className="bgg-1">
+      <img src={Small} alt="lag" className="zino"/>
+          
+          <img src={Big} alt="lag" className="bella"/>
+
+      </div>
+      <div className="bgg-2">
         <h1>Sign Up</h1>
+       
         {success ? (
           <>
             <h1 className="kug">Successful</h1>
@@ -46,7 +59,7 @@ const Register = () => {
                   id="inputUsername"
                   placeholder="Username"
                 />
-              </div>
+              </div> <br/>
               <div class="form-group col-md-6">
                 <label for="inputPassword">Password</label>
                 <input
@@ -59,6 +72,7 @@ const Register = () => {
                   placeholder="Password"
                 />
               </div>
+              
             </div>
             <button
               onClick={handleRegister}
@@ -74,7 +88,9 @@ const Register = () => {
             </div>
           </form>
         )}
-      </div>
+         </div>
+        </div>
+    
     </div>
   );
 };

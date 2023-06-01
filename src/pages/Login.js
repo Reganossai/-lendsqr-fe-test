@@ -74,7 +74,7 @@ const Login = ({ handleToken }) => {
       ></span>
         </div>
 
-        <h1 className="guk">{loginStatus}</h1>
+        <h6 className="guk">{loginStatus}</h6>
         <button
           onClick={handleLogin}
           type="submit"
