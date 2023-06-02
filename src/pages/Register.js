@@ -26,7 +26,7 @@ const Register = () => {
   }, [username, password]);
 
   return (
-    <div className="register-div">
+    <div className="login-div">
       <div class="bg"></div>
       <div className="bgg">
       <div className="bgg-1">
@@ -47,9 +47,8 @@ const Register = () => {
           </>
         ) : (
           <form>
-            <div class="form-row">
+            <div class="form-group">
               <div class="form-group col-md-6">
-                <label for="inputUsername">Username</label>
                 <input
                   type="text"
                   name="username"
@@ -61,7 +60,6 @@ const Register = () => {
                 />
               </div> <br/>
               <div class="form-group col-md-6">
-                <label for="inputPassword">Password</label>
                 <input
                   type="password"
                   name="password"
@@ -77,13 +75,13 @@ const Register = () => {
             <button
               onClick={handleRegister}
               type="submit"
-              id="sub-btn"
+              id="sub-btn-2"
               class="btn btn-primary"
             >
               Register
             </button>
             <br />
-            <div className="kupa">
+            <div className="kupa-2">
               <Link to="/login">Already have an account? sign in</Link>
             </div>
           </form>

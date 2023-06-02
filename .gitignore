@@ -21,3 +21,83 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+
+
+      {/* <div className="blu">
+        <Sidebaruserdetails handleLogout={handleLogout} />
+      </div>
+      <div className="ovrll">
+        <div className="obt">
+          <p>
+            <span>
+              <FontAwesomeIcon icon={faArrowLeftLong} className="obt-fontawesome" />
+            </span>
+            <Link to={"/users"}>Back to Users</Link>
+          </p>
+        </div>
+
+        <div className="user-headerr">
+          <h1>User Details</h1>
+          <button
+            id="red"
+            className="btn btn-default"
+            onClick={() => handleBlacklistUser()}
+          >
+            BLACKLIST USER
+          </button>
+          <button
+            id="green"
+            className="btn btn-default"
+            onClick={() => handleActivateUser()}
+          >
+            ACTIVE USER
+          </button>
+        </div>
+
+        <div className="u-d">
+          <div className="u-d-sub">
+            <FontAwesomeIcon icon={faUser} className="hol" />
+          </div>
+          <div className="u-d-sub">
+            <h3>
+              <b>{person?.profile?.firstName}</b>{" "}
+              <b>{person?.profile?.lastName}</b>
+            </h3>
+            <h5>{person?.profile?.bvn}</h5>
+          </div>
+          <div id="under" className="u-d-sub">
+            <h4>User's Tier</h4>
+            <h6>
+              <FontAwesomeIcon icon={faStar} className="holy" />
+            </h6>
+          </div>
+          <div id="under" className="u-d-sub">
+            <h3>
+              <b>
+                {person?.profile?.currency}
+                <span>{person?.accountBalance}</span>
+              </b>
+            </h3>
+            <h5>{person?.accountNumber}/Providus Bank</h5>
+          </div>
+        </div>
+
+        <div className="m-d">
+          <nav className="m-d-navbar">
+            <ul>
+              <li className="m-d-one">General Details</li>
+
+              <li>Documents</li>
+
+              <li>Bank Details</li>
+
+              <li>Loans</li>
+
+              <li>Savings</li>
+
+              <li>App and System</li>
+            </ul>
+          </nav>
+        </div>

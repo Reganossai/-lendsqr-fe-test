@@ -1,7 +1,7 @@
 import React, { useEffect, useCallback, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
-import { Link, NavLink } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Sidebaruserdetails from "../components/Sidebaruserdetails";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -107,7 +107,7 @@ const Userdetails = ({ handleLogout }) => {
   }
 
   return (
-    <div>
+    <div className="ov">
       <Navbar handleLogout={handleLogout} />
 
       <div className="blu">
@@ -117,7 +117,7 @@ const Userdetails = ({ handleLogout }) => {
         <div className="obt">
           <p>
             <span>
-              <FontAwesomeIcon icon={faArrowLeftLong} className="obt" />
+              <FontAwesomeIcon icon={faArrowLeftLong} className="obt-fontawesome" />
             </span>
             <Link to={"/users"}>Back to Users</Link>
           </p>
@@ -147,7 +147,7 @@ const Userdetails = ({ handleLogout }) => {
           </div>
           <div className="u-d-sub">
             <h3>
-              <b>{person?.profile?.firstName}</b>{" "}
+              <b>{person?.profile?.firstName}</b>
               <b>{person?.profile?.lastName}</b>
             </h3>
             <h5>{person?.profile?.bvn}</h5>
@@ -186,6 +186,7 @@ const Userdetails = ({ handleLogout }) => {
             </ul>
           </nav>
         </div>
+
 
         <div className="m-p">
           <h1>Personal Information</h1>
@@ -254,7 +255,7 @@ const Userdetails = ({ handleLogout }) => {
 
           <hr />
 
-          <div>
+          <div className="lilo">
             <h1>Education and Employment</h1>
             <div className="m-p-total">
               <div>
@@ -352,7 +353,6 @@ const Userdetails = ({ handleLogout }) => {
                 <div className="m-p-total-sub">
                   <h4>FULL NAME</h4>
                   <h3>
-                    {" "}
                     {person?.guarantor?.firstName} {person?.guarantor?.lastName}
                   </h3>
                 </div>
@@ -388,7 +388,6 @@ const Userdetails = ({ handleLogout }) => {
                 <div className="m-p-total-sub">
                   <h4>FULL NAME</h4>
                   <h3>
-                    {" "}
                     {person?.guarantor?.firstName} {person?.guarantor?.lastName}
                   </h3>
                 </div>
@@ -417,8 +416,9 @@ const Userdetails = ({ handleLogout }) => {
             </div>
           </div>
         </div>
-      </div>
+      
     </div>
+    </div>  
   );
 };
 

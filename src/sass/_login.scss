@@ -20,16 +20,14 @@
 .form-group {
   position: relative;
 
-  input{
+  input {
     width: 430px;
-    padding:10px;
-
+    padding: 10px;
   }
 }
 
-
-::placeholder{
-    font-size: 13px;
+::placeholder {
+  font-size: 13px;
 }
 
 .password-toggle {
@@ -49,37 +47,99 @@
 }
 
 .bgg-2 {
-    padding: 30px;
+  padding: 30px;
 }
 
 .bgg-2 {
   h1 {
     margin: 150px 0px 20px 0px;
-    color: darkblue;
+    color:#191970;
     font-weight: bold;
   }
 
   p {
-    color:#848884;
+    color: #848884;
     margin-bottom: 40px;
   }
 }
 
-
-#sub-btn{
-    width: 430px;
-    background-color:#088F8F;
+#sub-btn {
+  width: 430px;
+  background-color: #088f8f;
 }
 
-
-.guk{
-    width: 400px;
-    font-family: Arial, Helvetica, sans-serif;
-    color:crimson;
-
+#sub-btn-2 {
+  margin-left: 15px;
+  width: 430px;
+  background-color: #088f8f;
 }
 
-.kupa{
-    margin-top: 10px;
+.guk {
+  width: 400px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: crimson;
+}
 
+.kupa {
+  margin-top: 10px;
+}
+
+.kupa-2 {
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+@media only screen and (max-width: 800px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 26px;
+    left: 260px;
+  }
+
+  .bgg {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .bgg-1 {
+    display: none;
+  }
+
+  .form-group {
+    position: relative;
+
+    input {
+      width: 300px;
+    }
+  }
+
+  #sub-btn {
+    width: 300px;
+  }
+
+  #sub-btn-2 {
+    width: 300px;
+  }
+
+  .kupa a {
+    color: crimson;
+  }
+
+  .login-div .bg {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background-image: url("../assets/big.jpeg");
+    background-size: cover;
+    background-position: center;
+    object-fit: fill;
+    opacity: 0.6;
+  }
 }

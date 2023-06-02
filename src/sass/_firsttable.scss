@@ -3,7 +3,7 @@
 .dashboard-table{
     position: absolute;
     top: 480px;
-    left: 230px;
+    left: 210px;
     background-color: white;
     overflow-x: auto;
 
@@ -68,6 +68,14 @@
 
 }
 
+
+.responsive-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -76,12 +84,24 @@ table {
     font-family: Arial, Helvetica, sans-serif;
     
   }
-  
-  th, td {
+
+  th{
     font-size: 15px;
     text-align: left;
     padding: 8px;
     border-bottom: 1px solid #E5E4E2;
+    text-align: left;
+    color: #191970;
+
+  }
+  
+  td {
+    font-size: 15px;
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #E5E4E2;
+    text-align: left;
+    color: #71797e;
   }
 
   .dropdown-menu{
@@ -123,3 +143,54 @@ table {
         margin-left: 5px;
     }
   }
+
+  
+@media only screen and (max-width: 800px) {
+.dashboard-table{
+  position: absolute;
+  left: 0px;
+  top: 120px;
+  width: 100%;
+  overflow-x:auto;
+}
+
+.responsive-table th,
+.responsive-table td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: none;
+  font-family: Arial, Helvetica, sans-serif;
+  overflow: scroll;
+  
+}
+
+th{
+  font-size: 15px;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #E5E4E2;
+  color:#191970;
+}
+
+ td {
+  font-size: 15px;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #E5E4E2;
+  color: #71797e;
+}
+
+
+
+
+}

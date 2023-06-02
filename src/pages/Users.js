@@ -44,7 +44,7 @@ const Users = ({ handleLogout }, { itemsPerPage }) => {
     return <h1>{errorMessage}</h1>;
   }
   return (
-    <div>
+    <div className="ov">
       <Navbar handleLogout={handleLogout} />
 
       <div className="blu">

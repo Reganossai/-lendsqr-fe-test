@@ -95,8 +95,8 @@ const Firsttable = () => {
   }
 
   return (
-    <div className="dashboard-table">
-      <table>
+    <div className="dashboard-table" > 
+      <table className="responsive-table">
         <thead>
           <tr>
             <th>ORGANIZATION</th>
