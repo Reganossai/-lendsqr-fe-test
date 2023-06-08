@@ -138,20 +138,23 @@ nav{
 
     #navbarSupportedContentMobile {
         display: block;
+        
+
     
         ul{
             position: absolute;
             top: 70px;
             left: -350px;
-            height: 300vh;
             width: 100%;
             z-index: 1;
             background-color: cadetblue;
+            
         }
+
     
         li a{
             color: #191970;
-            margin-left: 5px;
+            margin-left: 10px;
         }
       }
 

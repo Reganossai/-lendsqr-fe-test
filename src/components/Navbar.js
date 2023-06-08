@@ -51,7 +51,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
   }, [handleLogout]);
 
   nav
-    ? (document.body.style.overflow = "hidden")
+    ? (document.body.style.overflowX = "hidden")
     : (document.body.style.overflow = "auto");
 
   return (
@@ -65,12 +65,12 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
         <Search />
         <div id="navbarSupportedContent">
           <ul>
-            <li>
+            <li className="nav-link">
               <p className="doc">
                 <Link>Docs</Link>
               </p>
             </li>
-            <li>
+            <li className="nav-link">
               <Link>
                 <p className="doc">
                   <FontAwesomeIcon icon={faBell} />
@@ -93,11 +93,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                     {profileName}
                   </span>
                 </button>
-                <div
-                  id="dropdown1-menu"
-                  class="dropdown-menu"
-                  aria-labelledby="dropdownMenuButton"
-                >
+                <div id="dropdown1-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <ul>
                     <li className="btt">
                       <button className="btn btn-primary" onClick={Logout}>
@@ -170,14 +166,14 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                       />
                       <Link>Savings</Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon
                         icon={faHandHoldingDollar}
                         className="fontawesome-list"
                       />
                       <Link>Loan Requests</Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon
                         icon={faUserCheck}
                         className="fontawesome-list"
@@ -185,7 +181,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
 
                       <Link>Whitelist</Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon
                         icon={faUserXmark}
                         className="fontawesome-list"
@@ -198,7 +194,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                         BUSINESSES
                       </NavLink>
                     </p>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon
                         icon={faBriefcase}
                         className="fontawesome-list"
@@ -206,40 +202,40 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
 
                       <Link>Organization</Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faHandHoldingDollar} />
                       <Link>Loan Products</Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faLandmark} />
                       <Link>Savings Products</Link>
                     </li>
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faCoins} />
                       <Link>Fees and Charges</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faMobileScreen} />
                       <Link>Transactions</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faFan} />
                       <Link>Services</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faUserGear} />
                       <Link>Service Account</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faScroll} />
                       <Link>Settlement</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faChartColumn} />
                       <Link>Reports</Link>
                     </li>
@@ -250,43 +246,44 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                       </NavLink>
                     </p>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faSliders} />
                       <Link>Preferences</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faCloud} />
                       <Link>Fees and Pricing</Link>
                     </li>
 
-                    <li>
+                    <li className="nav-link">
                       <FontAwesomeIcon icon={faClipboard} />
                       <Link>Audit Logs</Link>
                     </li>
 
-                    <li>
-                      <FontAwesomeIcon icon={faArrowsSpin} />
-                      <Link>System Messages</Link>
-                    </li>
+            <li className="nav-link">
+              
+              <FontAwesomeIcon icon={faArrowsSpin}/>
+                <Link>System Messages</Link>
+              </li>
+              
+              <br/>
+              <br/>
 
-                    <br />
-                    <br />
+              <hr/>
 
-                    <li>
-                      <FontAwesomeIcon icon={faArrowsSpin} />
-                      <button
-                        id="btt"
-                        className="btn btn-Default"
-                        onClick={Logout}
-                      >
+              <li className="nav-link">
+              
+              <FontAwesomeIcon icon={faArrowsSpin}/>
+              <button  id="btt" className="btn btn-Default" onClick={Logout}>
                         Logout
                       </button>
-                    </li>
+              </li>
 
-                    <li>
-                      <p>v1.2.0</p>
-                    </li>
+              <li>
+                <p>v1.2.0</p>
+              </li>
+
                   </div>
                 </ul>
               </div>
