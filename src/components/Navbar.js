@@ -8,6 +8,7 @@ import image from "../assets/image.png";
 import Search from "./Search";
 import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import {
+  faArrowsSpin,
   faAngleDown,
   faScroll,
   faBriefcase,
@@ -64,12 +65,12 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
         <Search />
         <div id="navbarSupportedContent">
           <ul>
-            <li className="nav-link">
+            <li>
               <p className="doc">
                 <Link>Docs</Link>
               </p>
             </li>
-            <li className="nav-link">
+            <li>
               <Link>
                 <p className="doc">
                   <FontAwesomeIcon icon={faBell} />
@@ -92,7 +93,11 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                     {profileName}
                   </span>
                 </button>
-                <div id="dropdown1-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <div
+                  id="dropdown1-menu"
+                  class="dropdown-menu"
+                  aria-labelledby="dropdownMenuButton"
+                >
                   <ul>
                     <li className="btt">
                       <button className="btn btn-primary" onClick={Logout}>
@@ -165,14 +170,14 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                       />
                       <Link>Savings</Link>
                     </li>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon
                         icon={faHandHoldingDollar}
                         className="fontawesome-list"
                       />
                       <Link>Loan Requests</Link>
                     </li>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon
                         icon={faUserCheck}
                         className="fontawesome-list"
@@ -180,7 +185,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
 
                       <Link>Whitelist</Link>
                     </li>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon
                         icon={faUserXmark}
                         className="fontawesome-list"
@@ -193,7 +198,7 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                         BUSINESSES
                       </NavLink>
                     </p>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon
                         icon={faBriefcase}
                         className="fontawesome-list"
@@ -201,40 +206,40 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
 
                       <Link>Organization</Link>
                     </li>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faHandHoldingDollar} />
                       <Link>Loan Products</Link>
                     </li>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faLandmark} />
                       <Link>Savings Products</Link>
                     </li>
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faCoins} />
                       <Link>Fees and Charges</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faMobileScreen} />
                       <Link>Transactions</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faFan} />
                       <Link>Services</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faUserGear} />
                       <Link>Service Account</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faScroll} />
                       <Link>Settlement</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faChartColumn} />
                       <Link>Reports</Link>
                     </li>
@@ -245,19 +250,42 @@ const Navbar = ({ handleLogout }, usernameLogin) => {
                       </NavLink>
                     </p>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faSliders} />
                       <Link>Preferences</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faCloud} />
                       <Link>Fees and Pricing</Link>
                     </li>
 
-                    <li className="nav-link">
+                    <li>
                       <FontAwesomeIcon icon={faClipboard} />
                       <Link>Audit Logs</Link>
+                    </li>
+
+                    <li>
+                      <FontAwesomeIcon icon={faArrowsSpin} />
+                      <Link>System Messages</Link>
+                    </li>
+
+                    <br />
+                    <br />
+
+                    <li>
+                      <FontAwesomeIcon icon={faArrowsSpin} />
+                      <button
+                        id="btt"
+                        className="btn btn-Default"
+                        onClick={Logout}
+                      >
+                        Logout
+                      </button>
+                    </li>
+
+                    <li>
+                      <p>v1.2.0</p>
                     </li>
                   </div>
                 </ul>

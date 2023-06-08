@@ -8,6 +8,7 @@ import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 import { faUserCheck } from "@fortawesome/free-solid-svg-icons";
+import big from "../assets/big.jpeg";
 
 const Firsttable = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -87,7 +88,7 @@ const Firsttable = () => {
   }, [callBck]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <img src={big} alt="logo" className="loading"/>;
   }
 
   if (errorMessage) {

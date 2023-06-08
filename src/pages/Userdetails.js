@@ -118,10 +118,11 @@ const Userdetails = ({ handleLogout }) => {
       <div className="ovrll">
         <div className="obt">
           <p>
+          <Link to={"/users"}>
             <span>
               <FontAwesomeIcon icon={faArrowLeftLong} className="obt-fontawesome" />
             </span>
-            <Link to={"/users"}>Back to Users</Link>
+            Back to Users</Link>
           </p>
         </div>
 

@@ -91,7 +91,7 @@ const Status = () => {
   }, [callBck]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return<img src={big} alt="logo" className="loading"/>;
   }
 
   if (errorMessage) {

@@ -8,7 +8,7 @@ import { faDashboard, faUserGroup } from "@fortawesome/free-solid-svg-icons";
 import {faUsers} from "@fortawesome/free-solid-svg-icons";
 import {faFileLines} from "@fortawesome/free-solid-svg-icons";
 import {faCoins} from "@fortawesome/free-solid-svg-icons";
-
+import big from "../assets/big.jpeg";
 
 const Dashboard = ({ handleLogout }, { itemsPerPage }) => {
   const [person, setPerson] = useState([]);
@@ -37,7 +37,7 @@ const Dashboard = ({ handleLogout }, { itemsPerPage }) => {
   }, [callBck]);
 
   if (loading) {
-    return   <h1>Loading...</h1>;
+    return <img src={big} alt="logo" className="loading"/>;
  
   }
 
