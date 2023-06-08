@@ -2,6 +2,7 @@ import React, { useEffect, useCallback, useState } from "react";
 import axios from "axios";
 import Navbar from "../components/Navbar";
 import { Link} from "react-router-dom";
+import big from "../assets/big.jpeg";
 import Sidebaruserdetails from "../components/Sidebaruserdetails";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -96,10 +97,11 @@ const Userdetails = ({ handleLogout }) => {
 
   useEffect(() => {
     callBck();
+    console.log()
   }, [callBck]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <img src={big} alt="logo" className="loading"/>;
   }
 
   if (errorMessage) {
@@ -125,6 +127,7 @@ const Userdetails = ({ handleLogout }) => {
 
         <div className="user-headerr">
           <h1>User Details</h1>
+          <p>{statusText}</p>
           <button
             id="red"
             className="btn btn-default"
